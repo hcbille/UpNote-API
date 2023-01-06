@@ -1,0 +1,4 @@
+upnote://x-callback-url/note/new?title=[title]&text=[text]&notebook=[notebook]
+
+
+http://localhost:3000/create_note?apiKey=abc123&title=Test+Note&text=This+is+a+test+note&notebook=Test
