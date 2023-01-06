@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/sh
+am start -n com.getupnote.android/.ui.home.MainActivity
+cd ~/UpNote-API
+./runMe.sh
