@@ -6,7 +6,11 @@ const { exec } = require('child_process');
 // Set up the Winston logger to log to a file
 const logger = winston.createLogger({
   transports: [
-    new winston.transports.File({ filename: 'api.log' }),
+    new winston.transports.File({
+      filename: 'api.log',
+      maxSize: 50 * 1024 * 1024, // 50 MB
+      maxFiles: 3
+    }),
   ]
 });
 
