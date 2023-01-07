@@ -9,7 +9,7 @@ It uses an Android device as the API gateway with Termux as the software setup.
 
 ## Install:
 1. Clone the project.
-2. Run "install.sh" to copy files from boot/ to .termux/boot to make the project and ssh autorun.
+2. Run "install.sh" to copy files from ./boot/ to ~/.termux/boot to make the project and ssh autorun.
 3. run "runMe.sh" to start the API
 
 # UpNote endpoint used:
