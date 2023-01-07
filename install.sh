@@ -1,8 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/sh
 
 echo "Copying files to .termux/boot/ to make them run at boot"
-cp /boot/start-API ~/.termux/boot/start-API
-cp /boot/start-sshd ~/.termux/boot/start-sshd
+cp ./boot/start-API ~/.termux/boot/start-API
+cp ./boot/start-sshd ~/.termux/boot/start-sshd
 chmod +x ~/.termux/boot/start-sshd
 chmod +x ~/.termux/boot/start-API
 
