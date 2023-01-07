@@ -2,4 +2,6 @@
 cp /boot/start-API ~/.termux/boot/start-API
 cp /boot/start-sshd ~/.termux/boot/start-sshd
 chmod +x ~/.termux/boot/start-sshd
-chmod +x ~/.termux/boot/start-API
+chmod +x ~/.termux/boot/start-AP
+
+chmod +x runMe.sh
