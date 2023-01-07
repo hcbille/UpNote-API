@@ -63,7 +63,7 @@ app.get('/start_ssh', (req, res) => {
     }
 
     // Log the request
-    logger.info(`API request from ${req.ip}: ${xCallbackUrl}`);
+    logger.info(`API request from ${req.ip}: start_ssh`);
 
     // Send a success response to the client
     res.send({ message: 'Success' });
