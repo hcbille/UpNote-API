@@ -1,0 +1,23 @@
+{
+  "name": "upnote-api",
+  "version": "1.0.0",
+  "description": "upnote://x-callback-url/note/new?title=[title]&text=[text]&notebook=[notebook]",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hcbille/UpNote-API.git"
+  },
+  "author": "HcBille",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hcbille/UpNote-API/issues"
+  },
+  "homepage": "https://github.com/hcbille/UpNote-API#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "winston": "^3.8.2"
+  }
+}
