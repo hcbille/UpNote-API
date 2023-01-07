@@ -9,14 +9,8 @@ chmod +x ~/.termux/boot/start-API
 echo "Setting up API-keys"
 sleep 1
 if [ -f api_keys.js ]; then
-  echo "api_keys.js already exists. Do you want to replace it? (y/n)"
-  read REPLY
-  echo
-  if [ REPLY != "y" ] && [ REPLY != "Y" ]; then
-    exit 0
-  fi
+  echo "api_keys.js already exists. It will be replaced."
 fi
-
 echo "Enter API key:"
 read api_key
 echo "module.exports = ['$api_key'];" > api_keys.js
