@@ -10,8 +10,7 @@ const logger = winston.createLogger({
   ]
 });
 
-// Replace this with your list of approved API keys
-const approvedKeys = ['abc123', 'def456'];
+const approvedKeys = require('./api_keys');
 
 app.get('/create_note', (req, res) => {
   // Extract the input parameters from the request
@@ -45,6 +44,57 @@ app.get('/create_note', (req, res) => {
   });
 });
 
+app.get('/start_ssh', (req, res) => {
+  // Extract the input parameters from the request
+  const apiKey = req.query.apiKey;
+
+
+  // Verify the API key
+  if (!approvedKeys.includes(apiKey)) {
+    res.status(401).send({ error: 'Unauthorized' });
+    return;
+  }
+
+  // Run the SSHD script
+  exec(`sshd`, { shell: '/data/data/com.termux/files/usr/bin/bash' }, (error, stdout, stderr) => {
+    if (error) {
+      res.status(500).send({ error: 'Internal Server Error' });
+      return;
+    }
+
+    // Log the request
+    logger.info(`API request from ${req.ip}: ${xCallbackUrl}`);
+
+    // Send a success response to the client
+    res.send({ message: 'Success' });
+  });
+});
+
+app.get('/stop_ssh', (req, res) => {
+  // Extract the input parameters from the request
+  const apiKey = req.query.apiKey;
+
+
+  // Verify the API key
+  if (!approvedKeys.includes(apiKey)) {
+    res.status(401).send({ error: 'Unauthorized' });
+    return;
+  }
+
+  // pkill sshd
+  exec(`pkill sshd`, { shell: '/data/data/com.termux/files/usr/bin/bash' }, (error, stdout, stderr) => {
+    if (error) {
+      res.status(500).send({ error: 'Internal Server Error' });
+      return;
+    }
+
+    // Log the request
+    logger.info(`API request from ${req.ip}: ${xCallbackUrl}`);
+
+    // Send a success response to the client
+    res.send({ message: 'Success' });
+  });
+});
 
 
 app.listen(3000, () => {
