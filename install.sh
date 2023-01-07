@@ -12,7 +12,7 @@ if [ -f api_keys.js ]; then
   echo "api_keys.js already exists. Do you want to replace it? (y/n)"
   read REPLY
   echo
-  if [ "REPLY" != "y" ] && [ "$REPLY" != "Y" ]; then
+  if [ REPLY != "y" ] && [ REPLY != "Y" ]; then
     exit 0
   fi
 fi
